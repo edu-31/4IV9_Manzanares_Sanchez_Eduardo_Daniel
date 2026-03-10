@@ -75,7 +75,7 @@ public class EstructuraDatos {
             }else{
                 guardarbinario = "No se puede convertir ese numero, solo acepta positivos";
             }
-            System.out.println("");
+            System.out.println("el numero en binario es:" + guardarbinario);
                 break;
             case 3:
                 break;
