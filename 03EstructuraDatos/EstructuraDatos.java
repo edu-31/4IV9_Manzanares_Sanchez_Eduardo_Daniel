@@ -34,12 +34,12 @@ class EstructuraDatos{
         do{
         System.out.println("Bienvenido a este programa para verificar que tanto saben programar a partir de algoritmos basicos.");
         System.out.println("Por favor elija la opción deseada:");
-        System.out.println("1.- ");
-        System.out.println("2.- ");
-        System.out.println("3.- ");
-        System.out.println("4.- ");
-        System.out.println("5.- ");
-        System.out.println("6.- ");
+        System.out.println("1.- Desarrollar un programa para calcular el bono de un descuento por edad");
+        System.out.println("2.- Convertir numeros decimales a binarios");
+        System.out.println("3.- Convertir temperaturas entre los 3 principales grados C -> F y K");
+        System.out.println("4.- Realizar un programa para contar numero de positivos y negavitosde una serie de numeros");
+        System.out.println("5.- Desarrollar una tienda para agregar productos y precios");
+        System.out.println("6.- Desarrollar un programa para calcular el area y perimetro de 5 diferentes figuras");
         System.out.println("7.- ");
         System.out.println("8.- ");
         System.out.println("9.- ");
@@ -47,7 +47,7 @@ class EstructuraDatos{
         System.out.println("11.- ");
         System.out.println("12.- ");
         System.out.println("13.- ");
-        System.out.println("14.- Salir ");
+        System.out.println("14.- Salir");
         
         //entrada de dato
         opcion = entrada.nextInt();
@@ -95,14 +95,38 @@ class EstructuraDatos{
             case 4:
 
                 break;
-            case 5
-                System.out.println("Bienvenido a esra hermossa tiendita linda y kawai");
-                System.out.println("Por favor ingrese cuantos elementos va a comprar");     
+            case 5:
+                System.out.println("Bienvenido a esta hermosa tiendita linda y kawaii");
+                System.out.println("Por favor ingrese cuantos elementos va a comprar");
                 int elementosproducto = 0;
+                float compra = 0;
                 elementosproducto = entrada.nextInt();
+                if( elementosproducto > 0){
+                    for(int i = 1; i<= elementosproducto; i++){
+                        System.out.println("Ingresa el nombre del producto");
+                        String nombreproducto="";
+                        nombreproducto = entrada.next();
+                        System.out.println("Ingrese el precio");
+                        // el 0.0 es un double, para que no de error se debe agregar una f al final para indicar que es un float
+                        float precio = 0.0f;
+                        precio = entrada.nextFloat();
+                        float resultado;
+                        System.out.println("Ingrese la cantidad de producto");
+                        int cantidad = 0;
+                        precio = entrada.nextInt();
+                        resultado = precio * cantidad;
+                        compra = resultado + compra;
+                        
+                        
 
-                if (elementosproducto > 0) {
-                    for     
+
+                    }
+                    // marcaba error en compra porque las variables que estaban
+                    //adentro del for no existen afuera, asi que por eso las variables se declaran afuera al inicio
+                    System.out.println("El total de la compra es: " + compra);
+
+                }else{
+                    System.out.println("ingrese solo cantidades positivas");
                 }
 
                 break;
