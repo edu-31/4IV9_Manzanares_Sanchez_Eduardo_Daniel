@@ -55,7 +55,9 @@ class EstructuraDatos{
         //ahora tengo que evaluar la entrada
         switch (opcion) {
             case 1:
-                
+            //programa para calcular el bono de un descuento por edad 
+            System.out.println();
+
                 break;
             case 2:  
             //convertir un numero decimal a binario
@@ -90,7 +92,20 @@ class EstructuraDatos{
             case 3:
                 
                 break;
-        
+            case 4:
+
+                break;
+            case 5
+                System.out.println("Bienvenido a esra hermossa tiendita linda y kawai");
+                System.out.println("Por favor ingrese cuantos elementos va a comprar");     
+                int elementosproducto = 0;
+                elementosproducto = entrada.nextInt();
+
+                if (elementosproducto > 0) {
+                    for     
+                }
+
+                break;
             default:
                 break;
         }
