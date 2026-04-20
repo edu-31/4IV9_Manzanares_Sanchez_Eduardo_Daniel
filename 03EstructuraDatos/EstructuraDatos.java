@@ -40,13 +40,13 @@ class EstructuraDatos{
         System.out.println("4.- Realizar un programa para contar numero de positivos y negavitosde una serie de numeros");
         System.out.println("5.- Desarrollar una tienda para agregar productos y precios");
         System.out.println("6.- Desarrollar un programa para calcular el area y perimetro de 5 diferentes figuras");
-        System.out.println("7.- ");
-        System.out.println("8.- ");
-        System.out.println("9.- ");
-        System.out.println("10.- ");
-        System.out.println("11.- ");
-        System.out.println("12.- ");
-        System.out.println("13.- ");
+        System.out.println("7.- Tabla de multiplicar");
+        System.out.println("8.- Desarrollar un programa para calcular el factorial con recursividad");
+        System.out.println("9.- Triangulo equilatero y rombo");
+        System.out.println("10.- Desarrollar una figura hueca");
+        System.out.println("11.- Realizar algunos patrones");
+        System.out.println("12.- Realizar un diamante");
+        System.out.println("13.- Desarrollar una calculadora basica + - * / ");
         System.out.println("14.- Salir");
         
         //entrada de dato
@@ -56,8 +56,8 @@ class EstructuraDatos{
         switch (opcion) {
             case 1:
             //programa para calcular el bono de un descuento por edad 
-            System.out.println();
-
+            System.out.println("Ingrese su edad:");
+            
                 break;
             case 2:  
             //convertir un numero decimal a binario
@@ -107,8 +107,7 @@ class EstructuraDatos{
                         String nombreproducto="";
                         nombreproducto = entrada.next();
                         System.out.println("Ingrese el precio");
-                        // el 0.0 es un double, para que no de error se debe agregar una f al final para indicar que es un float
-                        float precio = 0.0f;
+                        float precio = 0;
                         precio = entrada.nextFloat();
                         float resultado;
                         System.out.println("Ingrese la cantidad de producto");
@@ -129,6 +128,48 @@ class EstructuraDatos{
                     System.out.println("ingrese solo cantidades positivas");
                 }
 
+                break;
+            case 6:
+                break;
+            case 7:
+                //quiero dejarles una tabla de multiplicar
+                //deberan de darle formato y titulos a cada columna
+                for(int n = 1; n <= 10; n++){
+                    System.out.println(
+                        "| " + n + "  | " + (n*10 + " " + (n*100) +" " + (n*1000)));
+                }
+                break;
+            case 8:
+                break;
+            case 9:
+                //vamos a realizar un cuadrado magico
+                System.out.println("Vamos a realizar el dibujo de un cuadrado magico");
+                System.out.println("Ingrese el tamaño del cuadrado");
+                int n1= entrada.nextInt();
+
+                if(n1 >= 1 && n1 <=20){
+                    //se imprime
+                    for(int i = 1; i <= n1; i++){
+                        //recorro las columnas
+                        //System.out.print(" 1 ");
+                        for(int j = 1; j <= n1; j++){
+                            System.out.print(" * ");
+
+                        }
+                        System.out.println("");
+                    }
+
+                }else{
+                    System.out.println("Por favor solo ingrese valores entre el 1 y el 20");
+                }
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
                 break;
             default:
                 break;
