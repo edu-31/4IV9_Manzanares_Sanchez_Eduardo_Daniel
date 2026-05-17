@@ -17,14 +17,14 @@ public class DA0Estudiante {
     Estudiante obj[] = new Estudiante[10];
     int x = 0; // Contador de estudiantes registrados
     
-    // MENÚ PRINCIPAL (READ & CONTROL)
+    // Menu principal
     void menu(){
         String var = "si";
         
         while(var.equalsIgnoreCase("si")){
             try {
                 int op = Integer.parseInt(JOptionPane.showInputDialog(
-                        "=== CRUD DE ESTUDIANTES ===\n"
+                        "=== CRUD de Estudiantes ===\n"
                         + "1.- Registrar Estudiante (Create)\n"
                         + "2.- Mostrar todos los Estudiantes (Read)\n"
                         + "3.- Buscar Estudiante por Boleta (Read/Search)\n"
@@ -39,7 +39,7 @@ public class DA0Estudiante {
                         int boletaBuscada = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la boleta a buscar:"));
                         int indice = buscarPorBoleta(boletaBuscada);
                         if(indice != -1) {
-                            // Usamos GET para mostrar la información del estudiante encontrado
+                            
                             JOptionPane.showMessageDialog(null, "Estudiante Encontrado:\n" 
                                     + "Nombre: " + obj[indice].getNombre() + "\n"
                                     + "Edad: " + obj[indice].getEdad());
@@ -60,9 +60,7 @@ public class DA0Estudiante {
         }
     }
 
-    // ==========================================
-    // 1. REGISTRAR (CREATE)
-    // ==========================================
+    // Crear un estudiante
     public void pedirEstudiante() {
         if (x >= obj.length) {
             JOptionPane.showMessageDialog(null, "El arreglo está lleno. No se pueden registrar más estudiantes.");
@@ -71,7 +69,7 @@ public class DA0Estudiante {
         
         int numboleta = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la boleta:"));
         
-        // Validación: Evitar boletas duplicadas
+        // Evitar boletas duplicadas
         if(buscarPorBoleta(numboleta) != -1) {
             JOptionPane.showMessageDialog(null, "Error: Esa boleta ya existe.");
             return;
@@ -83,24 +81,22 @@ public class DA0Estudiante {
         String genInput = JOptionPane.showInputDialog("Ingresa el género (M/F):");
         char gen = (genInput != null && !genInput.isEmpty()) ? genInput.charAt(0) : 'U';
         
-        // Se crea el objeto y se guarda en la posición 'x'
+        // Se crea el objeto y se guarda
         obj[x] = new Estudiante(numboleta, nom, edad, gen);
         x++;
         JOptionPane.showMessageDialog(null, "Estudiante registrado con éxito.");
     }
 
-    // ==========================================
-    // 2. MOSTRAR TODOS (READ)
-    // ==========================================
+    // Mostrar estudiantes
     public void mostrarEstudiantes() {
         if (x == 0) {
             JOptionPane.showMessageDialog(null, "No hay estudiantes registrados.");
             return;
         }
         
-        String lista = "=== LISTA DE ESTUDIANTES ===\n";
+        String lista = "=== Lista de Estudiantes ===\n";
         for(int i = 0; i < x; i++){
-            // Uso estricto de GETTERS para recuperar la información de cada objeto
+            // Usar getters para recuperar la información de cada objeto
             lista += "Boleta: " + obj[i].getNumBoleta() 
                     + " | Nombre: " + obj[i].getNombre() 
                     + " | Edad: " + obj[i].getEdad() 
@@ -109,23 +105,18 @@ public class DA0Estudiante {
         JOptionPane.showMessageDialog(null, lista);
     }
 
-    // ==========================================
-    // 3. BUSCAR (MÉTODO AUXILIAR)
-    // ==========================================
-    // Devuelve el índice del arreglo donde está el estudiante, o -1 si no existe.
+    // Buscar un estudiante
     public int buscarPorBoleta(int boleta) {
         for (int i = 0; i < x; i++) {
-            // Usamos GET para comparar la boleta solicitada con la del objeto guardado
+            // GET para comparar la boleta solicitada con la del objeto guardado
             if (obj[i].getNumBoleta() == boleta) {
-                return i; // Retorna la posición del estudiante
+                return i; 
             }
         }
         return -1; // No lo encontró
     }
 
-    // ==========================================
-    // 4. EDITAR (UPDATE) -> Aquí usamos SET
-    // ==========================================
+    // Editar estudiambre
     public void editarEstudiante() {
         int boleta = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la boleta del estudiante a editar:"));
         int indice = buscarPorBoleta(boleta);
@@ -135,20 +126,18 @@ public class DA0Estudiante {
             return;
         }
         
-        // Si lo encuentra, solicitamos los nuevos datos
+        
         String nuevoNombre = JOptionPane.showInputDialog("Nuevo nombre (Actual: " + obj[indice].getNombre() + "):");
         int nuevaEdad = Integer.parseInt(JOptionPane.showInputDialog("Nueva edad (Actual: " + obj[indice].getEdad() + "):"));
         
-        // ¡USO DE SETTERS! Modificamos el objeto existente sin necesidad de destruirlo o recrearlo
+        
         obj[indice].setNombre(nuevoNombre);
         obj[indice].setEdad(nuevaEdad);
         
         JOptionPane.showMessageDialog(null, "Datos actualizados correctamente.");
     }
 
-    // ==========================================
-    // 5. ELIMINAR (DELETE)
-    // ==========================================
+    // Borrar estudiambre
     public void eliminarEstudiante() {
         int boleta = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la boleta del estudiante a eliminar:"));
         int indice = buscarPorBoleta(boleta);
@@ -158,13 +147,11 @@ public class DA0Estudiante {
             return;
         }
         
-        // Lógica de eliminación en Arreglos:
-        // Recorremos todos los elementos posteriores una posición hacia atrás para no dejar huecos nulos
+        
         for (int i = indice; i < x - 1; i++) {
             obj[i] = obj[i + 1];
         }
         
-        // Limpiamos la última posición que quedó duplicada tras el recorrido y decrementamos el contador
         obj[x - 1] = null;
         x--;
         
