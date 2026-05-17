@@ -3,50 +3,41 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.herenciapersona;
+import java.io.Serializable;
 
 /**
  *
  * @author k31
  */
 public class Persona {
-    
     private String nombre;
+    private String apellidoPaterno;
+    private String apellidoMaterno;
     private int edad;
-    private char genero;
-    
-    public Persona(){
-    }
+    private String correo;
 
-    public Persona(String nombre, int edad, char genero) {
+    public Persona() {}
+
+    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, int edad, String correo) {
         this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
         this.edad = edad;
-        this.genero = genero;
+        this.correo = correo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getApellidoPaterno() { return apellidoPaterno; }
+    public void setApellidoPaterno(String apellidoPaterno) { this.apellidoPaterno = apellidoPaterno; }
 
-    public int getEdad() {
-        return edad;
-    }
+    public String getApellidoMaterno() { return apellidoMaterno; }
+    public void setApellidoMaterno(String apellidoMaterno) { this.apellidoMaterno = apellidoMaterno; }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+    public int getEdad() { return edad; }
+    public void setEdad(int edad) { this.edad = edad; }
 
-    public char getGenero() {
-        return genero;
-    }
-
-    public void setGenero(char genero) {
-        this.genero = genero;
-    }
-    
-    
-    
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
 }
